@@ -1,32 +1,202 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# ============================================================
+# cyber-ops-playground .gitignore
+# ============================================================
+
+# ------------------------------------------------------------
+# Sistemas operativos
+# ------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------------------------------------
+# IDEs y editores
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+.atom/
+
+# ------------------------------------------------------------
+# CRÍTICO — Credenciales y secretos (seguridad)
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+id_dsa
+id_ecdsa
+*.ppk
+secrets/
+credentials/
+loot/
+tokens/
+api_keys/
+.secrets
+
+# ------------------------------------------------------------
+# Capturas de red y tráfico
+# ------------------------------------------------------------
+*.pcap
+*.pcapng
+*.pcap.gz
+*.cap
+*.dmp
+*.etl
+
+# ------------------------------------------------------------
+# Wordlists y diccionarios (suelen ser muy pesadas)
+# ------------------------------------------------------------
+wordlists/
+rockyou.txt
+*.wordlist
+*.lst
+
+# ------------------------------------------------------------
+# Payloads, shells y artefactos ofensivos
+# ------------------------------------------------------------
+shell.php
+shell.asp
+shell.aspx
+r57.php
+c99.php
+*.webshell
+payloads/
+shells/
+implants/
+*.shellcode
+
+# ------------------------------------------------------------
+# Binarios y ejecutables generados localmente
+# ------------------------------------------------------------
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
+*.out
+*.bin
+*.o
+*.obj
 
-# Test binary, built with `go test -c`
+# ------------------------------------------------------------
+# Imágenes de disco y máquinas virtuales
+# ------------------------------------------------------------
+*.vmdk
+*.vmx
+*.ova
+*.ovf
+*.vhd
+*.vhdx
+*.qcow2
+*.iso
+*.img
+*.vdi
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+pip-log.txt
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------
+# Go
+# ------------------------------------------------------------
+bin/
 *.test
-
-# Code coverage profiles and other test artifacts
 *.out
 coverage.*
 *.coverprofile
-profile.cov
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
 go.work.sum
 
-# env file
-.env
+# ------------------------------------------------------------
+# Node / JavaScript
+# ------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn/cache
+.pnp.*
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# ------------------------------------------------------------
+# Ruby
+# ------------------------------------------------------------
+.bundle/
+vendor/bundle/
+*.gem
+
+# ------------------------------------------------------------
+# Terraform / IaC
+# ------------------------------------------------------------
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfvars
+override.tf
+override.tf.json
+
+# ------------------------------------------------------------
+# Docker
+# ------------------------------------------------------------
+.docker/
+
+# ------------------------------------------------------------
+# Logs generales
+# ------------------------------------------------------------
+*.log
+logs/
+*.log.*
+
+# ------------------------------------------------------------
+# Archivos temporales y backups
+# ------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
